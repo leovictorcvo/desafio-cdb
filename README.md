@@ -32,19 +32,29 @@ iv. Acima de 24 meses 15%<br>
 
 ## Execução
 Após clonar o repositório, os projetos poderão ser inicializados da seguinte forma utilizando o terminal de comando:
-### Backend
+#### Backend
 1. Com base na pasta raiz do projeto, alterar para o diretório do Desafio.API<br>
  ```cd .\backend\Desafio.API\```
 2. iniciar a api utilizando o comando dotnet<br>
 ```dotnet run```<br><br>
-Após esse comando a API estará recebendo requisições através do endpoint **https://localhost:5001/cdb** ou **http://localhost:5000/cdb**
+Após esse comando a API estará recebendo requisições através do endpoint **https://localhost:5001/api/cdb** ou **http://localhost:5000/api/cdb**. O corpo da mensagem deverá ser um JSON e deve conter as chaves __valor__ e __prazo__, conforme exemplo abaixo:<br>
+```
+{
+	"valor":1.99,
+	"prazo":10
+}
+```
 
-### Frontend
+#### Frontend
 1. Com base na pasta raiz do projeto, alterar para o diretório do projeto do frontend<br>
  ```cd .\frontend\desafio```
 2. iniciar utilizando o comando abaixo<br>
 ```ng serve -o```<br><br>
 Após esse comando a janela do navegador deve abrir e apresentar a tela do projeto. Caso não abra, basta abrir um browser e navegar para a página **http://localhost:4200/**
 
+## Execução através do docker
+Caso possua o docker instalado, a forma mais fácil de ter o ambiente pronto para execução é através do comando ```docker-compose up``` que irá carregar as imagens dos dois projetos. Após as imagens terem sido carregadas, o endpoint de acesso à API será o **http://localhost/api/cdb** e a página web poderá ser acessada através do endereço **http://localhost/**<br>
+
 ## Testes do backend
 Foram criado 3 projetos de testes que se encontram na pasta [backend](./backend/). Para executar os testes basta digitar o comando ```dotnet test``` dentro de cada pasta.
+<hr>

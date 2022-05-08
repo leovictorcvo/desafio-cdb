@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { RetornoDaSimulacao } from './../models/RetornoDaSimulacao';
-import { DadosParaSimulacao } from './../models/DadosParaSimulacao';
+import { Config } from "./config";
+
+import { RetornoDaSimulacao } from '@app/models/RetornoDaSimulacao';
+import { DadosParaSimulacao } from '@app/models/DadosParaSimulacao';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class CdbService {
   constructor(private httpClient: HttpClient) { }
 
   public obterDadosDaSimulacao(data: DadosParaSimulacao): Observable<RetornoDaSimulacao> {
-    const baseUrl = 'https://localhost:5001/cdb';
+    const baseUrl = `${Config.api}`;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'

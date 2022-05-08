@@ -25,7 +25,7 @@ namespace Desafio.API.Tests
 
             var json = JsonSerializer.Serialize(new { valor = 0, prazo = 2 });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var request = new HttpRequestMessage(HttpMethod.Post, "/cdb")
+            var request = new HttpRequestMessage(HttpMethod.Post, "/api/cdb")
             {
                 Content = content
             };

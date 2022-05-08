@@ -16,7 +16,7 @@
               <input type="text" name="valor" formControlName="valor" class="form-control text-end" autofocus
                 [ngClass]="cssValidator(f.valor)">
               <div class="invalid-feedback" *ngIf="f.valor.touched && f.valor.errors?.required">É obrigatório</div>
-              <div class="invalid-feedback" *ngIf="f.valor.touched && f.valor.errors?.min">Informe um valor positivo
+              <div class="invalid-feedback" *ngIf="f.valor.touched && f.valor.errors?.min">Informe um valor maior do que zero.
               </div>
               <div class="invalid-feedback" *ngIf="f.valor.touched && f.prazo.errors?.max">Valor máximo é R$
                 999.999.999.999,99</div>

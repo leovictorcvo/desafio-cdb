@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Desafio.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CdbController : ControllerBase
     {
         private readonly ICdbService cdbService;

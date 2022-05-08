@@ -64,7 +64,7 @@ export class SimuladorAplicacaoComponent implements OnInit {
 
   private configuraCampos(): void {
     this.form = this.fb.group({
-      valor: [this.valorInicial, [Validators.required, Validators.min(0), Validators.max(999_999_999_999.99)]],
+      valor: [this.valorInicial, [Validators.required, Validators.min(0.01), Validators.max(999_999_999_999.99)]],
       prazo: [this.prazoInicial, [Validators.required, Validators.min(2), Validators.max(120)]]
     });
   }

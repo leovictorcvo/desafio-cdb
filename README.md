@@ -45,3 +45,6 @@ Após esse comando a API estará recebendo requisições através do endpoint **
 2. iniciar utilizando o comando abaixo<br>
 ```ng serve -o```<br><br>
 Após esse comando a janela do navegador deve abrir e apresentar a tela do projeto. Caso não abra, basta abrir um browser e navegar para a página **http://localhost:4200/**
+
+## Testes do backend
+Foram criado 3 projetos de testes que se encontram na pasta [backend](./backend/). Para executar os testes basta digitar o comando ```dotnet test``` dentro de cada pasta.

@@ -7,10 +7,11 @@ namespace Desafio.API.Tests
 {
     public class CdbServiceTest
     {
+        const int TOLERANCE = 6;
         private ProfitabilityResult CalculateExpectedValue(DataForCalculation data, double taxRate)
         {
             //TB = 108%, CDI = 0.9%
-            const double FACTOR = 1.08 * 0.09;
+            const double FACTOR = 1.08 * 0.009;
             double gross = data.Value * Math.Pow(1 + FACTOR, data.DeadlineForRedemption);
             var tax = (gross - data.Value) * taxRate;
             double net = gross - tax;
@@ -26,8 +27,8 @@ namespace Desafio.API.Tests
             var result = new CdbService().Calculate(data);
             var expected = CalculateExpectedValue(data, TAX_RATE);
 
-            Assert.Equal(result.GrossIncome, expected.GrossIncome);
-            Assert.Equal(result.NetIncome, expected.NetIncome);
+            Assert.Equal(result.GrossIncome, expected.GrossIncome, TOLERANCE);
+            Assert.Equal(result.NetIncome, expected.NetIncome, TOLERANCE);
         }
 
         [Fact]
@@ -39,8 +40,8 @@ namespace Desafio.API.Tests
             var result = new CdbService().Calculate(data);
             var expected = CalculateExpectedValue(data, TAX_RATE);
 
-            Assert.Equal(result.GrossIncome, expected.GrossIncome);
-            Assert.Equal(result.NetIncome, expected.NetIncome);
+            Assert.Equal(result.GrossIncome, expected.GrossIncome, TOLERANCE);
+            Assert.Equal(result.NetIncome, expected.NetIncome, TOLERANCE);
         }
 
         [Fact]
@@ -52,8 +53,8 @@ namespace Desafio.API.Tests
             var result = new CdbService().Calculate(data);
             var expected = CalculateExpectedValue(data, TAX_RATE);
 
-            Assert.Equal(result.GrossIncome, expected.GrossIncome);
-            Assert.Equal(result.NetIncome, expected.NetIncome);
+            Assert.Equal(result.GrossIncome, expected.GrossIncome, TOLERANCE);
+            Assert.Equal(result.NetIncome, expected.NetIncome, TOLERANCE);
         }
 
         [Fact]
@@ -65,8 +66,8 @@ namespace Desafio.API.Tests
             var result = new CdbService().Calculate(data);
             var expected = CalculateExpectedValue(data, TAX_RATE);
 
-            Assert.Equal(result.GrossIncome, expected.GrossIncome);
-            Assert.Equal(result.NetIncome, expected.NetIncome);
+            Assert.Equal(result.GrossIncome, expected.GrossIncome, TOLERANCE);
+            Assert.Equal(result.NetIncome, expected.NetIncome, TOLERANCE);
         }
     }
 }

@@ -18,6 +18,7 @@ export class SimuladorAplicacaoComponent implements OnInit {
   enviandoDados = false;
   valorInicial = 'R$ 0,00';
   prazoInicial = '2';
+  erroEnvio = false;
 
   constructor(
     private fb: FormBuilder,
@@ -47,13 +48,18 @@ export class SimuladorAplicacaoComponent implements OnInit {
 
     this.cdbService.obterDadosDaSimulacao(dadosParaEnvio).subscribe({
       next: (response: RetornoDaSimulacao) => {
+        this.erroEnvio = false;
         this.retornoDaSimulacao = { ...response };
       },
-      error: (error: Error) => { console.error(JSON.stringify(error)) },
+      error: (error: Error) => {
+        this.erroEnvio = true;
+        console.error(JSON.stringify(error));
+      },
     }).add(() => this.enviandoDados = false);
   }
 
   public limpaDadosGeral() : void {
+    this.erroEnvio = false;
     this.form.reset();
     this.form.patchValue({
       valor: this.valorInicial,

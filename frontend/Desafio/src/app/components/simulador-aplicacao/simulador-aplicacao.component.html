@@ -34,21 +34,21 @@
           </div>
         </form>
       </div>
-      <div class="card-footer">
-        <div class="d-flex justify-content-between py-2">
-          <div class="col-12 col-md-5">
-            <button type="button" class="btn btn-success w-100" [disabled]="!form.valid || enviandoDados"
-            (click)="enviaDados()"><em class="fa fa-calculator me-2"></em>Simular</button>
-          </div>
-          <div class="col-12 col-md-5">
-            <button type="button" class="btn btn-outline-danger w-100" (click)="limpaDadosGeral()"><em
-              class="fa fa-eraser me-2"></em>Limpar dados</button>
-          </div>
+      <div class="card-footer d-flex flex-wrap justify-content-between py-2">
+        <div class="col-12 col-md-5">
+          <button type="button" class="btn btn-success w-100" [disabled]="!form.valid || enviandoDados"
+          (click)="enviaDados()"><em class="fa fa-calculator me-2"></em>Simular</button>
         </div>
-
+        <div class="col-12 col-md-5 mt-3 mt-md-0">
+          <button type="button" class="btn btn-outline-danger w-100" (click)="limpaDadosGeral()"><em
+            class="fa fa-eraser me-2"></em>Limpar dados</button>
+        </div>
       </div>
     </div>
-    <div class="card">
+    <div class="alert alert-danger" role="alert" *ngIf="erroEnvio">
+      Ocorreu um erro ao simular esse investimento.
+    </div>
+    <div class="card" *ngIf="!erroEnvio">
       <div class="card-header py-3">
         <h5 class="my-0 fw-normal">Resultado da simulação</h5>
       </div>

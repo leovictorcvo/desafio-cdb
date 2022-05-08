@@ -48,7 +48,9 @@ Após esse comando a API estará recebendo requisições através do endpoint **
 #### Frontend
 1. Com base na pasta raiz do projeto, alterar para o diretório do projeto do frontend<br>
  ```cd .\frontend\desafio```
-2. iniciar utilizando o comando abaixo<br>
+2. Antes de executar o projeto, deve ser feito o download das dependências utilizando o npm<br>
+```npm i```
+3. iniciar utilizando o comando abaixo<br>
 ```ng serve -o```<br><br>
 Após esse comando a janela do navegador deve abrir e apresentar a tela do projeto. Caso não abra, basta abrir um browser e navegar para a página **http://localhost:4200/**
 

@@ -1,13 +1,13 @@
 <div class="row h-100 justify-content-center align-items-center">
   <div class="col-10 col-md-8 col-lg-6">
-    <div class="d-flex align-items-center p-3 my-3 text-white bg-secondary rounded shadow-sm">
+    <header class="d-flex align-items-center p-3 my-3 bg-secondary rounded shadow-sm">
       <em class="fa-solid fa-money-bill-trend-up fa-3x"></em>
       <div class="lh-1 ms-3">
         <h2 class="h2 mb-0 lh-1">Simule o seu investimento</h2>
         <small>Informe o valor a ser aplicado e o prazo em meses</small>
       </div>
-    </div>
-    <div class="card my-3">
+    </header>
+    <main class="card my-3">
       <div class="card-body">
         <form [formGroup]="form">
           <div class="row">
@@ -44,7 +44,7 @@
             class="fa fa-eraser me-2"></em>Limpar dados</button>
         </div>
       </div>
-    </div>
+    </main>
     <div class="alert alert-danger" role="alert" *ngIf="erroEnvio">
       Ocorreu um erro ao simular esse investimento.
     </div>
